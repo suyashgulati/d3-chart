@@ -1,0 +1,47 @@
+$color-main: #4fc08d;
+
+$font-family: 'Source Sans Pro', sans-serif;
+
+
+.comment {
+    margin: 0 .5em;
+    padding: 0.75em 1.5em;
+}
+
+input {
+    font-size: 14px;
+    margin: 0 .5em;
+    border-radius: 2em;
+    padding: 0.75em 1.5em;
+    background: none;
+    border: #e3e3e3 1px solid;
+    transition: border 250ms ease-out;
+    &:focus {
+      border: $color-main 1px solid;
+      outline: none;
+    }
+}
+
+.add-button {
+    font-size: 14px;
+    margin: 0 .5em;
+    border-radius: 2em;
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    background: none;
+    color: darken($color-main, 20%);
+    border: 1px solid;
+    letter-spacing: 1px;
+    color: #4fc08d;
+    border: $color-main 1px solid;
+    transition: 250ms ease-out;
+    &:hover, &:focus {
+      color: #fff;
+      background: $color-main;
+    }
+    &:disabled {
+      color: #777777;
+      background: #fff;
+      border: #777777 1px solid;
+    }
+}

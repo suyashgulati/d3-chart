@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{this.data.d1 | date}} - {{this.data.d2 | date}}</h1>
+
+<div mat-dialog-content>
+    <ul>
+        <li *ngFor="let comment of comments" class="comment">
+            {{comment}}
+        </li>
+    </ul>
+</div>
+<div mat-dialog-actions>
+    <form [formGroup]="form">
+        <input type="text" formControlName="newComment" />
+        <button [disabled]="!newComment" type="submit" (click)="addComment()" class="add-button">+ Add Comment</button>
+    </form>
+</div>
