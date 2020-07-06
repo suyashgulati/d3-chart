@@ -1,5 +1,5 @@
 Steps to getting started:
-- clone the project
+- clone the project `git clone https://github.com/suyashgulati/d3-chart.git`
 - to run the mongo server `docker-compose up -d`
 - to run backend server
 ```
