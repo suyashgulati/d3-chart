@@ -1,0 +1,14 @@
+<table *ngIf="allComments">
+    <tr>
+        <td></td>
+        <td>Start Date</td>
+        <td>End Date</td>
+        <td>Comment</td>
+    </tr>
+    <tr *ngFor="let comment of allComments">
+        <td><span class="color-span" [style.background-color]="comment.color"></span></td>
+        <td>{{comment.start | date}}</td>
+        <td>{{comment.end | date}}</td>
+        <td>{{comment.text}}</td>
+    </tr>
+</table>

@@ -5,7 +5,8 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('express:server');
+var { socketInit } = require('../socket');
+// var debug = require('debug')('express:server');
 var http = require('http');
 
 /**
@@ -20,6 +21,12 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+/**
+ * Create HTTP server.
+ */
+
+socketInit(server);
 
 /**
  * Listen on provided port, on all network interfaces.

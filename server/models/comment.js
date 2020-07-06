@@ -6,6 +6,9 @@ var commentSchema = new Schema({
     comments: String,
     start: { type: Date, default: Date.now },
     end: { type: Date, default: Date.now },
+    x1: Number, 
+    x2: Number, 
+    color: String,
 }, { timestamps: true });
 
 commentSchema.statics.findIntersectingComments = function (d1, d2) {

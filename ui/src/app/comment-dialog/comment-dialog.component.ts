@@ -19,7 +19,7 @@ export class CommentDialogComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     public dialogRef: MatDialogRef<CommentDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { d1: Date, d2: Date }) { }
+    @Inject(MAT_DIALOG_DATA) public data: { d1: Date, d2: Date, x1: number, x2: number, color: string }) { }
 
   ngOnInit() {
     this.getComments();
@@ -37,9 +37,9 @@ export class CommentDialogComponent implements OnInit {
 
   addComment() {
     if (this.newComment) {
-      this.apiService.postComment(this.data.d1, this.data.d2, this.newComment).subscribe(() => {
+      this.apiService.postComment(this.data.d1, this.data.d2, this.newComment, this.data.x1, this.data.x2, this.data.color).subscribe(() => {
         this.form.reset();
-        this.getComments();
+        this.dialogRef.close(this.data);
       });
     }
   }

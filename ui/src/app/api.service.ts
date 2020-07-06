@@ -10,14 +10,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getChartData() {
-    return this.http.get(`${environment.apiUrl}chart-data`);
+    return this.http.get(`${environment.apiUrl}api/chart-data`);
   }
 
   getComments(d1: Date, d2: Date) {
-    return this.http.get(`${environment.apiUrl}comment?d1=${d1}&d2=${d2}`);
+    return this.http.get(`${environment.apiUrl}api/comment?d1=${d1}&d2=${d2}`);
   }
 
-  postComment(d1: Date, d2: Date, comment: string) {
-    return this.http.post(`${environment.apiUrl}comment`, { d1, d2, comment });
+  postComment(d1: Date, d2: Date, comment: string, x1: number, x2: number, color: string) {
+    return this.http.post(`${environment.apiUrl}api/comment`, { d1, d2, comment, x1, x2, color });
   }
 }
